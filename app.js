@@ -51,7 +51,10 @@ var ready;
 
 ready = function () {
 
-	$('#portfolio').on('click', '.portfolio-cover', function() {
+	var apiKey  = 'E8JrpEgVCBglciJxgutsr6MQ51NGo5Vi';
+	var userID  = 'RebeccaEileenAdams';
+
+	$('#portfolio').on('click', '.portfolio-title', function() {
 	    var $this = $(this),
 	        projectID = $this.data('project-id'),
 	        beProjectContentAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key=' + apiKey,
