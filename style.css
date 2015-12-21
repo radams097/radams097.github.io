@@ -22,11 +22,11 @@ body {
   overflow: hidden;
   z-index: 999;
   background-color: #82B0AF;
-  -webkit-transition: height 0.2s;
-  -moz-transition: height 0.2s;
-  -ms-transition: height 0.2s;
-  -o-transition: height 0.2s;
-  transition: height 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -37,8 +37,7 @@ body {
 }
 
 .portfolio-header.small {
-  height: 75px;
-  padding: 10px 0px;
+  transform: translate(0px, -250px);
 }
 
 .portfolio-header figure img {
@@ -50,7 +49,7 @@ body {
 }
 
 .portfolio-header.small figure img {
-  transform: scale(.5) translate(0px, -80px);
+  transform: scale(.5) translate(0px, 390px);
 }
 
 .portfolio-header figure {
@@ -59,11 +58,6 @@ body {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
-}
-
-.portfolio-header.small figure {
-  margin: .5em 40px;
-  height: 60px;
 }
 
 .portfolio-header.small .profile-name {
@@ -253,8 +247,8 @@ body {
 @media (max-width: 900px) {
   .portfolio-item {
     margin-bottom: 30px;
-    padding: 0px 15px;
+    padding: 0px 5px;
     list-style-type: none;
-    width: calc(49% - 27px);
+    width: calc(50% - 10px);
   }
 }
