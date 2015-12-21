@@ -54,6 +54,19 @@ ready = function () {
 	var apiKey  = 'E8JrpEgVCBglciJxgutsr6MQ51NGo5Vi';
 	var userID  = 'RebeccaEileenAdams';
 
+	$(window).on("scroll touchmove", function(e) {
+		var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 160,
+            header = $('.portfolio-header');
+        if (distanceY > shrinkOn) {
+            header.addClass('small');
+        } else {
+            if (header.hasClass('small')) {
+                header.removeClass('small');
+            }
+        }
+	});
+
 	$('#portfolio').on('click', '.portfolio-title', function() {
 	    var $this = $(this),
 	        projectID = $this.data('project-id'),
