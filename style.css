@@ -18,7 +18,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 300px;
+  height: 280px;
   overflow: hidden;
   z-index: 999;
   background-color: #82B0AF;
@@ -50,8 +50,7 @@ body {
 }
 
 .portfolio-header.small figure img {
-  transform: scale(.5);
-  margin-top: -40px;
+  transform: scale(.5) translate(0px, -80px);
 }
 
 .portfolio-header figure {
@@ -68,15 +67,15 @@ body {
 }
 
 .portfolio-header.small .profile-name {
-  display: none;
+  opacity: 0;
 }
 
 .portfolio-header.small .profile-location {
-  display: none;
+  opacity: 0;
 }
 
 .portfolio-header.small .profile-fields {
-  display: none;
+  opacity: 0;
 }
 
 .profile-name {
