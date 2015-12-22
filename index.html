@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	
+
 	<!-- Google Tag Manager -->
 	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5LBD2K"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -29,7 +29,14 @@
 
 	<header id="header" class="portfolio-header">
 		<script id="profile-template" type="text/x-handlebars-template">
-			<figure class="profile-avatar"><img src="{{user.images.[138]}}" alt=""></figure>
+			<div class="portfolio-content">
+				<figure class="profile-avatar"><img src="{{user.images.[138]}}" alt=""></figure>
+				<span class="profile-initials">
+					<span class="portfolio-title-text">BA</span>
+				</span>
+			</div> 
+			<!-- <figure class="profile-avatar"><img src="{{user.images.[138]}}" alt=""></figure>
+			<div class="profile-initials"><h1>BA</h1></div> -->
 	        <h1 class="profile-name">{{user.display_name}}</h1>
 	        <div class="profile-fields">
 	            <ul class="field-list">

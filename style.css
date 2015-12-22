@@ -34,6 +34,7 @@ body {
   box-shadow: 0px 0px 1px 1px #eee;
   text-align: center;
   color: white;
+  will-change: transform;
 }
 
 .portfolio-header.small {
@@ -58,6 +59,32 @@ body {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+.portfolio-header .profile-initials {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  background-color: #333;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.portfolio-header.small .profile-initials {
+  opacity: .5;
+  transform: scale(.5) translate(0px, 386px);
+}
+
+.portfolio-header.small .profile-initials .portfolio-title-text {
+  transform: scale(4);
 }
 
 .portfolio-header.small .profile-name {
@@ -134,6 +161,8 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-flow: column;
+  position: relative;
+  text-align: center;
 }
 
 .portfolio-list {
@@ -152,11 +181,6 @@ body {
     width: calc(33% - 27px);
 }
 
-.portfolio-content {
-    position: relative;
-    text-align: center;
-}
-
 .portfolio-title {
   cursor: pointer;
   position: absolute;
@@ -167,11 +191,11 @@ body {
   text-align: center;
   opacity: 0;
   background-color: #333;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  transition: all 0.8s ease;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 .portfolio-title:hover {
