@@ -73,8 +73,6 @@ ready = function() {
 			beProjectContentAPI = 'http://www.behance.net/v2/projects/' + projectID + '?callback=?&api_key=' + apiKey,
 			keyName = 'behanceProjectImages-' + projectID;
 
-		console.log(beProjectContentAPI);
-
 		function showGallery(dataSource) {
 			$this.magnificPopup({
 				items: dataSource,
@@ -90,7 +88,6 @@ ready = function() {
 		if (localStorage.getItem(keyName)) {
 			var srcItems = JSON.parse(localStorage.getItem(keyName));
 			showGallery(srcItems);
-			console.log('working with local storage');
 		} else {
 			$.getJSON(beProjectContentAPI, function(projectContent) {
 				var src = [];
