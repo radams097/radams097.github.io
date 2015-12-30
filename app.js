@@ -72,17 +72,26 @@ ready = function() {
 			projectID = $this.data('project-id'),
 			beProjectContentAPI = 'http://www.behance.net/v2/projects/' + projectID + '?callback=?&api_key=' + apiKey,
 			keyName = 'behanceProjectImages-' + projectID;
+		
+		// console.log(beProjectContentAPI);
 
 		function showGallery(dataSource) {
-			$this.magnificPopup({
-				items: dataSource,
-				gallery: {
-					enabled: true
-				},
-				type: 'image',
-				mainClass: 'animated',
-				removalDelay: 350
-			}).magnificPopup('open');
+			// $this.magnificPopup({
+			// 	items: dataSource,
+			// 	gallery: {
+			// 		enabled: true
+			// 	},
+			// 	type: 'image',
+			// 	mainClass: 'animated',
+			// 	removalDelay: 350
+			// }).magnificPopup('open');
+
+			var pswpElement = document.querySelectorAll('.pswp')[0];
+			// var options = {
+			//     index: 0 // start at first slide
+			// };
+			var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, dataSource, false);
+			gallery.init();
 		};
 
 		if (localStorage.getItem(keyName)) {
@@ -92,24 +101,26 @@ ready = function() {
 			$.getJSON(beProjectContentAPI, function(projectContent) {
 				var src = [];
 				$.each(projectContent.project.modules, function(index, mod) {
-					console.log(mod.src);
-					console.log(mod.caption_plain);
-					if (mod.src != undefined) {
+					if (mod.src != undefined && mod.width != undefined && mod.height != undefined) {
 						if (mod.caption_plain != undefined) {
 							src.push({
 								src: mod.src,
-								title: mod.caption_plain
+								title: mod.caption_plain,
+								w: mod.width,
+								h: mod.height
 							});
 						} else {
 							src.push({
-								src: mod.src
+								src: mod.src,
+								w: mod.width,
+								h: mod.height
 							});
 						}
 					}
 				});
-				showGallery(src);
 				var data = JSON.stringify(src);
 				localStorage.setItem(keyName, data);
+				showGallery(src);
 			});
 		};
 	});
